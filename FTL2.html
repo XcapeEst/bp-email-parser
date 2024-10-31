@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<!-- Keep the same viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Email Parser Tool</title>
+	<!-- Use Ubuntu font from local source or Google Fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+	<!-- Link to the external CSS file -->
+	<link rel="stylesheet" href="FTL2.css">
+</head>
+
+<body>
+	<div class="main-container">
+		<!-- Left sidebar (Debug) -->
+		<div class="sidebar-left" id="debug-log">
+			<h3>Debug:</h3>
+			<select id="debug-select" onchange="updateDebugLog()">
+				<option value="previewRemovalProcess">Email Preview Removal Process</option>
+			</select>
+			<pre id="debug-content"></pre>
+		</div>
+
+		<!-- Main content -->
+		<div class="container">
+			<h2>Email Parser Tool</h2>
+			<textarea id="input-email" placeholder="Paste email content here..."></textarea>
+			<div class="output">
+				<textarea id="output-email" readonly placeholder="Processed output..."></textarea>
+				<button class="copy-button" onclick="copyToClipboard()">Copy Result</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- Right sidebar (toggleable menu) -->
+	<div class="sidebar-right" id="sidebar-menu">
+		<label class="switch">
+			<input type="checkbox" id="debug-toggle" onclick="toggleDebug()">
+			<span class="slider round"></span>
+		</label>
+		<span class="menu-label">Debug</span>
+		<!-- You can add more menu options here -->
+	</div>
+
+	<!-- Alert for copy to clipboard -->
+	<div id="copy-alert" class="alert">Result copied to clipboard!</div>
+
+	<!-- Link to the external JavaScript file -->
+	<script src="FTL2.js"></script>
+</body>
+
+</html>
